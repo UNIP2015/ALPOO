@@ -1,12 +1,14 @@
 package br.com.unip.alpoo;
 import java.awt.Component;
 
+import javax.swing.ButtonGroup;
 import javax.swing.DefaultListModel;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 
@@ -62,15 +64,44 @@ public class TelaCurso extends JFrame{
 		panel.add(cbNome);
 		
 		//TIPO DE CURSO
-		JLabel lbTipoCurso = new JLabel("Tido de Curso");
+		JLabel lbTipoCurso = new JLabel("Tipo de Curso");
 		lbTipoCurso.setSize(200, 20);
-		lbTipoCurso.setLocation(5, 65);
+		lbTipoCurso.setLocation(245, 25);
 		panel.add(lbTipoCurso);
 		
+		JRadioButton rdBacharel = new JRadioButton("Bacharel");
+		rdBacharel.setSize(200, 20);
+		rdBacharel.setLocation(245, 45);
+		panel.add(rdBacharel);
 		
-
+		JRadioButton rdGestao = new JRadioButton("Gestão");
+		rdGestao.setSize(200, 20);
+		rdGestao.setLocation(245, 65);
+		panel.add(rdGestao);
+		
+		JRadioButton rdOutros = new JRadioButton("Outros");
+		rdOutros.setSize(200, 20);
+		rdOutros.setLocation(245, 85);
+		panel.add(rdOutros);
+		
+		ButtonGroup groupRadio = new ButtonGroup();
+		groupRadio.add(rdBacharel);
+		groupRadio.add(rdGestao);
+		groupRadio.add(rdOutros);
+		
 		
 		//CARGA HORARIA
+		JLabel lbCarga = new JLabel("Carga Horaria");
+		lbCarga.setSize(200, 20);
+		lbCarga.setLocation(245, 105);
+		panel.add(lbCarga);
+		
+		JTextField txtCarga = new JTextField();
+		txtCarga.setSize(115,20);
+		txtCarga.setLocation(245, 125);
+		panel.add(txtCarga);
+		
+		
 		
 		//CODIGO INSTITUTO
 		

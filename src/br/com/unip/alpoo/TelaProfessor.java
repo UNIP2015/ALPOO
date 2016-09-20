@@ -2,8 +2,6 @@ package br.com.unip.alpoo;
 import java.awt.Component;
 import java.text.ParseException;
 
-import javafx.scene.shape.Circle;
-
 import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
@@ -12,7 +10,6 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.text.MaskFormatter;
 
-import com.sun.javafx.geom.Rectangle;
 
 
 public class TelaProfessor extends JFrame{
