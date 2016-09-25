@@ -2,6 +2,7 @@ package br.com.unip.alpoo.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Curso {
 	private int id;
@@ -43,9 +44,22 @@ public class Curso {
 	
 	public static List<Curso> getListCursos(){
 		List<Curso> list = new ArrayList();
+		String[] cursos = new String[]{
+				"Administração de Empresa",
+				"Bio Medicia",
+				"Ciências Biologicas",
+				"Ciência da Computação",
+				"Direito",
+				"Educação Fisica",
+				"Farmacologia",
+				"Rede de Computadores",
+				"Sistema de Informações"
+		};
 		for(int i = 0; i < 10; i++){
 			Curso c = new Curso();
-			c.setNome("Curso " + (i+1));
+			Random r = new Random();
+			
+			c.setNome(cursos[r.nextInt(cursos.length)]);
 			c.setCargaHoraria(100);
 			c.setId((i+1));
 			c.setTipo("Bacharel");
