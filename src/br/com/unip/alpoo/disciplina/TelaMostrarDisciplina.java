@@ -39,7 +39,7 @@ public class TelaMostrarDisciplina extends FrameALPO {
 
 	public TelaMostrarDisciplina(Component parent) {
 		setTitle("Mostrar Disciplina");
-		setSize(499,750);
+		setSize(400,750);
 		setResizable(false);
 		setLocationRelativeTo(parent);
 		setAlwaysOnTop(true);

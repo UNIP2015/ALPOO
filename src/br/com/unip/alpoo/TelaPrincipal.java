@@ -15,19 +15,17 @@ import javax.swing.UIManager;
 
 import br.com.unip.alpoo.curso.TelaAlterarCurso;
 import br.com.unip.alpoo.curso.TelaCurso;
-<<<<<<< HEAD
+
 import br.com.unip.alpoo.curso.TelaExcluirCurso;
-import br.com.unip.alpoo.curso.TelaMostrarDisciplina;
 import br.com.unip.alpoo.disciplina.TelaAlterarDisciplina;
 import br.com.unip.alpoo.disciplina.TelaDisciplina;
 import br.com.unip.alpoo.disciplina.TelaExcluirDisciplina;
 import br.com.unip.alpoo.professor.TelaAlterarProfessor;
 import br.com.unip.alpoo.professor.TelaExcluirProfessor;
-=======
+
 import br.com.unip.alpoo.curso.TelaMostrarCurso;
-import br.com.unip.alpoo.disciplina.TelaDisciplina;
 import br.com.unip.alpoo.disciplina.TelaMostrarDisciplina;
->>>>>>> mostragem
+
 import br.com.unip.alpoo.professor.TelaMostrarProfessor;
 import br.com.unip.alpoo.professor.TelaProfessor;
 
@@ -175,7 +173,7 @@ public class TelaPrincipal extends JFrame{
 		mnMostrar.addSeparator();
 		
 		//Cadastrar
-		JMenu mnManutencao = new JMenu("Manutenção");
+		JMenu mnManutencao = new JMenu("ManutenÃ§Ã£o");
 		mnManutencao.add(mAlterarCurso);
 		mnManutencao.add(mExcluirCurso);
 		mnManutencao.addSeparator();
