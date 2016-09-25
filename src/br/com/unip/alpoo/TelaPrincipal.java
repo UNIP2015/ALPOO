@@ -23,7 +23,7 @@ public class TelaPrincipal extends JFrame{
 	private JFrame reference;
 	
 	public TelaPrincipal() {
-		setTitle("Caadastros");
+		setTitle("JAVA");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(400, 300);
@@ -92,6 +92,48 @@ public class TelaPrincipal extends JFrame{
 			}
 		});
 		
+		JMenuItem mAlterarCurso = new JMenuItem("Alterar Curso");
+		mAlterarCurso.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new TelaCurso(reference);		
+			}
+		});
+		
+		JMenuItem mExcluirCurso = new JMenuItem("Excluir Curso");
+		mExcluirCurso.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new TelaCurso(reference);		
+			}
+		});
+		
+		JMenuItem mAlterarProfessor = new JMenuItem("Alterar Professor");
+		mAlterarProfessor.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new TelaCurso(reference);		
+			}
+		});
+		
+		JMenuItem mExcluirProfessor = new JMenuItem("Excluir Professor");
+		mExcluirProfessor.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new TelaCurso(reference);		
+			}
+		});
+		
+		JMenuItem mAlterarDisciplina = new JMenuItem("Alterar Disciplina");
+		mAlterarDisciplina.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new TelaCurso(reference);		
+			}
+		});
+		
+		JMenuItem mExcluirDisciplina = new JMenuItem("Excluir Disciplina");
+		mExcluirDisciplina.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new TelaCurso(reference);		
+			}
+		});
+		
 		JMenuItem mnSairItem = new JMenuItem("Sair");
 		mnSairItem.addActionListener(new ActionListener() {
 			
@@ -117,6 +159,17 @@ public class TelaPrincipal extends JFrame{
 		mnMostrar.add(mnMostrarProfessores);
 		mnMostrar.add(mnMostrarDisciplinas);
 		mnMostrar.addSeparator();
+		
+		//Cadastrar
+		JMenu mnManutencao = new JMenu("Manutenção");
+		mnManutencao.add(mAlterarCurso);
+		mnManutencao.add(mExcluirCurso);
+		mnManutencao.addSeparator();
+		mnManutencao.add(mAlterarProfessor);
+		mnManutencao.add(mExcluirProfessor);
+		mnManutencao.addSeparator();
+		mnManutencao.add(mAlterarDisciplina);
+		mnManutencao.add(mExcluirDisciplina);
 			
 		JMenu mnSair = new  JMenu("Sair");
 		mnSair.add(mnSairItem);
@@ -126,6 +179,7 @@ public class TelaPrincipal extends JFrame{
 		bar.setLocation(0,0);
 		bar.add(mnCadastrar);
 		bar.add(mnMostrar);
+		bar.add(mnManutencao);
 		bar.add(mnSair);
 		
 		panel.add(bar);
