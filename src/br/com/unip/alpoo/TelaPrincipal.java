@@ -1,4 +1,5 @@
 package br.com.unip.alpoo;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -12,9 +13,15 @@ import javax.swing.JPopupMenu;
 import javax.swing.JToolBar;
 import javax.swing.UIManager;
 
+import br.com.unip.alpoo.curso.TelaAlterarCurso;
 import br.com.unip.alpoo.curso.TelaCurso;
+import br.com.unip.alpoo.curso.TelaExcluirCurso;
 import br.com.unip.alpoo.curso.TelaMostrarDisciplina;
+import br.com.unip.alpoo.disciplina.TelaAlterarDisciplina;
 import br.com.unip.alpoo.disciplina.TelaDisciplina;
+import br.com.unip.alpoo.disciplina.TelaExcluirDisciplina;
+import br.com.unip.alpoo.professor.TelaAlterarProfessor;
+import br.com.unip.alpoo.professor.TelaExcluirProfessor;
 import br.com.unip.alpoo.professor.TelaMostrarProfessor;
 import br.com.unip.alpoo.professor.TelaProfessor;
 
@@ -37,6 +44,7 @@ public class TelaPrincipal extends JFrame{
 		panel.setLayout(null);
 		panel.setSize(400,300);
 		panel.setLocation(0,0);
+		panel.setBackground(Color.red); 
 		
 		JMenuItem m1 = new JMenuItem("Curso");
 		m1.addActionListener(new ActionListener() {
@@ -95,42 +103,42 @@ public class TelaPrincipal extends JFrame{
 		JMenuItem mAlterarCurso = new JMenuItem("Alterar Curso");
 		mAlterarCurso.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new TelaCurso(reference);		
+				new TelaAlterarCurso(reference);		
 			}
 		});
 		
 		JMenuItem mExcluirCurso = new JMenuItem("Excluir Curso");
 		mExcluirCurso.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new TelaCurso(reference);		
+				new TelaExcluirCurso(reference);		
 			}
 		});
 		
 		JMenuItem mAlterarProfessor = new JMenuItem("Alterar Professor");
 		mAlterarProfessor.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new TelaCurso(reference);		
+				new TelaAlterarProfessor(reference);		
 			}
 		});
 		
 		JMenuItem mExcluirProfessor = new JMenuItem("Excluir Professor");
 		mExcluirProfessor.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new TelaCurso(reference);		
+				new TelaExcluirProfessor(reference);		
 			}
 		});
 		
 		JMenuItem mAlterarDisciplina = new JMenuItem("Alterar Disciplina");
 		mAlterarDisciplina.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new TelaCurso(reference);		
+				new TelaAlterarDisciplina(reference);		
 			}
 		});
 		
 		JMenuItem mExcluirDisciplina = new JMenuItem("Excluir Disciplina");
 		mExcluirDisciplina.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new TelaCurso(reference);		
+				new TelaExcluirDisciplina(reference);		
 			}
 		});
 		
