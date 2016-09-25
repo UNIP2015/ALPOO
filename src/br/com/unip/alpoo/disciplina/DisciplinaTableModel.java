@@ -60,4 +60,11 @@ public class DisciplinaTableModel extends AbstractTableModel {
 		}
 	}
 
+	public Disciplina getItemAt(int row) {
+		// TODO Auto-generated method stub
+		return this.listDisc.get(row);
+	}
+	
+	
+
 }

@@ -60,6 +60,11 @@ public class MostrarCursoTableModel extends AbstractTableModel{
         return String.class;
     }
 	
+	public Curso getItemAt(int row){
+		System.out.println(this.listCursos.get(row).getNome());
+		return this.listCursos.get(row);
+	}
+	
 	
 }
 

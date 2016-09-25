@@ -13,8 +13,9 @@ import javax.swing.JToolBar;
 import javax.swing.UIManager;
 
 import br.com.unip.alpoo.curso.TelaCurso;
-import br.com.unip.alpoo.curso.TelaMostrarDisciplina;
+import br.com.unip.alpoo.curso.TelaMostrarCurso;
 import br.com.unip.alpoo.disciplina.TelaDisciplina;
+import br.com.unip.alpoo.disciplina.TelaMostrarDisciplina;
 import br.com.unip.alpoo.professor.TelaMostrarProfessor;
 import br.com.unip.alpoo.professor.TelaProfessor;
 
@@ -69,7 +70,7 @@ public class TelaPrincipal extends JFrame{
 		mnMostrarCursos.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
-				new TelaMostrarDisciplina(reference);
+				new TelaMostrarCurso(reference);
 				
 			}
 		});

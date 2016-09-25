@@ -2,6 +2,7 @@ package br.com.unip.alpoo.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Disciplina {
 	private int id;
@@ -44,10 +45,11 @@ public class Disciplina {
 	public static List<Disciplina> list(){
 		List<Disciplina> l = new ArrayList<>();
 		for(int i = 0; i < 10; i++){
+			Random r = new Random();
 			Disciplina d = new Disciplina();
 			d.setCodCurso("1");
 			d.setId((i+1));
-			d.setAulasPorSemana("2");
+			d.setAulasPorSemana((r.nextInt(6)+1)+"");
 			d.setNome("Disciplina " +(i+1));
 			d.setCargaHorario("40");
 			l.add(d);

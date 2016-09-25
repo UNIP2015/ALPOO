@@ -65,4 +65,9 @@ public class ProfessorTableModel extends AbstractTableModel {
 		}
 	}
 
+	public Professor getItemAt(int row) {
+		// TODO Auto-generated method stub
+		return this.listProf.get(row);
+	}
+
 }
