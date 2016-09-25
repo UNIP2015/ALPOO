@@ -1,5 +1,8 @@
 package br.com.unip.alpoo.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Curso {
 	private int id;
 	private String nome;
@@ -36,6 +39,21 @@ public class Curso {
 	}
 	public void setCodInstitulo(int codInstitulo) {
 		this.codInstitulo = codInstitulo;
+	}
+	
+	public static List<Curso> getListCursos(){
+		List<Curso> list = new ArrayList();
+		for(int i = 0; i < 10; i++){
+			Curso c = new Curso();
+			c.setNome("Curso " + (i+1));
+			c.setCargaHoraria(100);
+			c.setId((i+1));
+			c.setTipo("Bacharel");
+			c.setCodInstitulo(1);
+			list.add(c);
+		}
+		
+		return list;
 	}
 	
 	

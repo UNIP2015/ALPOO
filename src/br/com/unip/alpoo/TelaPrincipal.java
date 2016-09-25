@@ -12,6 +12,12 @@ import javax.swing.JPopupMenu;
 import javax.swing.JToolBar;
 import javax.swing.UIManager;
 
+import br.com.unip.alpoo.curso.TelaCurso;
+import br.com.unip.alpoo.curso.TelaMostrarDisciplina;
+import br.com.unip.alpoo.disciplina.TelaDisciplina;
+import br.com.unip.alpoo.professor.TelaMostrarProfessor;
+import br.com.unip.alpoo.professor.TelaProfessor;
+
 
 public class TelaPrincipal extends JFrame{
 	private JFrame reference;
@@ -63,7 +69,7 @@ public class TelaPrincipal extends JFrame{
 		mnMostrarCursos.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
+				new TelaMostrarDisciplina(reference);
 				
 			}
 		});
@@ -72,7 +78,7 @@ public class TelaPrincipal extends JFrame{
 		mnMostrarProfessores.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
+				new TelaMostrarProfessor(reference);
 				
 			}
 		});
@@ -81,7 +87,7 @@ public class TelaPrincipal extends JFrame{
 		mnMostrarDisciplinas.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
+				new TelaMostrarDisciplina(reference);
 				
 			}
 		});
@@ -99,12 +105,13 @@ public class TelaPrincipal extends JFrame{
 		});
 		
 		
-		
+		//Cadastrar
 		JMenu mnCadastrar = new JMenu("Cadastrar");
 		mnCadastrar.add(m1);
 		mnCadastrar.add(m2);
 		mnCadastrar.add(m3);
 		
+		//Cadastrar
 		JMenu mnMostrar = new JMenu("Mostrar");
 		mnMostrar.add(mnMostrarCursos);
 		mnMostrar.add(mnMostrarProfessores);

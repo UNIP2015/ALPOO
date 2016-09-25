@@ -1,4 +1,4 @@
-package br.com.unip.alpoo;
+package br.com.unip.alpoo.disciplina;
 import java.awt.Component;
 
 import javax.swing.ButtonGroup;
@@ -102,6 +102,15 @@ public class TelaDisciplina extends JFrame{
 		panel.add(txtCarga);
 		
 		//CODIGO CURSO
+		JLabel lbCdCurso = new JLabel("Codigo do Curso");
+		setDefaultSize(lbCdCurso,2);
+		addBottom(lbCdCurso, txtCarga,2);
+		panel.add(lbCdCurso);
+		
+		JTextField txtCdCurso = new JTextField();
+		setDefaultSize(txtCdCurso,2);
+		addBottom(txtCdCurso, lbCdCurso,2);
+		panel.add(txtCdCurso);
 		
 		
 		add(panel);

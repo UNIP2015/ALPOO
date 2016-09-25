@@ -1,4 +1,4 @@
-package br.com.unip.alpoo;
+package br.com.unip.alpoo.professor;
 import java.awt.Component;
 import java.text.ParseException;
 
