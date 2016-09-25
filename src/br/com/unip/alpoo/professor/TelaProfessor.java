@@ -1,4 +1,5 @@
 package br.com.unip.alpoo.professor;
+import java.awt.Button;
 import java.awt.Component;
 import java.text.ParseException;
 
@@ -15,7 +16,7 @@ import javax.swing.text.MaskFormatter;
 public class TelaProfessor extends JFrame{
 	public TelaProfessor(Component parent) {
 		setTitle("Cadastrar Professor");
-		setSize(400,300);
+		setSize(400,350);
 		setResizable(false);
 		setLocationRelativeTo(parent);
 		setAlwaysOnTop(true); 
@@ -111,8 +112,6 @@ public class TelaProfessor extends JFrame{
 		panel.add(cbEstado);
 		
 		
-		
-		
 		try {
 			//Telefone
 			JLabel lbTelefone = new JLabel("Telefone");
@@ -179,10 +178,15 @@ public class TelaProfessor extends JFrame{
 		
 		panel.add(cbTitulo);
 		
-
+		Button confirmButton = new Button("Cadastrar");
+		confirmButton.setSize(100, 30);
+		confirmButton.setLocation(100, 270);
+		panel.add(confirmButton);
 		
-		
-		
+		Button clearButton = new Button("Limpar");
+		clearButton.setSize(100, 30);
+		clearButton.setLocation(200, 270);
+		panel.add(clearButton);
 		
 		add(panel);
 	}

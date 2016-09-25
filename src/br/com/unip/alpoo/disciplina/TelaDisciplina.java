@@ -1,4 +1,5 @@
 package br.com.unip.alpoo.disciplina;
+import java.awt.Button;
 import java.awt.Component;
 
 import javax.swing.ButtonGroup;
@@ -112,6 +113,15 @@ public class TelaDisciplina extends JFrame{
 		addBottom(txtCdCurso, lbCdCurso,2);
 		panel.add(txtCdCurso);
 		
+		Button confirmButton = new Button("Cadastrar");
+		confirmButton.setSize(100, 30);
+		confirmButton.setLocation(100, 200);
+		panel.add(confirmButton);
+		
+		Button clearButton = new Button("Limpar");
+		clearButton.setSize(100, 30);
+		clearButton.setLocation(200, 200);
+		panel.add(clearButton);		
 		
 		add(panel);
 	}

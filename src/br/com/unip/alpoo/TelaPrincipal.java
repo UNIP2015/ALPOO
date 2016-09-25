@@ -47,7 +47,7 @@ public class TelaPrincipal extends JFrame{
 			}
 		});
 		
-		JMenuItem m2 = new JMenuItem("Profesor");
+		JMenuItem m2 = new JMenuItem("Professor");
 		m2.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {

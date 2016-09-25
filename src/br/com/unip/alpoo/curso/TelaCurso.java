@@ -1,4 +1,5 @@
 package br.com.unip.alpoo.curso;
+import java.awt.Button;
 import java.awt.Component;
 
 import javax.swing.ButtonGroup;
@@ -15,7 +16,7 @@ import javax.swing.JTextField;
 public class TelaCurso extends JFrame{ 
 	public TelaCurso(Component parent) {
 		setTitle("Cadastrar Curso");
-		setSize(400,300);
+		setSize(400,320);
 		setResizable(false);
 		setLocationRelativeTo(parent);
 		setAlwaysOnTop(true);
@@ -101,7 +102,15 @@ public class TelaCurso extends JFrame{
 		txtCarga.setLocation(245, 125);
 		panel.add(txtCarga);
 		
+		Button confirmButton = new Button("Cadastrar");
+		confirmButton.setSize(100, 30);
+		confirmButton.setLocation(100, 250);
+		panel.add(confirmButton);
 		
+		Button clearButton = new Button("Limpar");
+		clearButton.setSize(100, 30);
+		clearButton.setLocation(200, 250);
+		panel.add(clearButton);
 		
 		//CODIGO INSTITUTO
 		
