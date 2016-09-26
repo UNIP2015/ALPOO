@@ -29,7 +29,6 @@ import br.com.unip.alpoo.disciplina.TelaMostrarDisciplina;
 import br.com.unip.alpoo.professor.TelaMostrarProfessor;
 import br.com.unip.alpoo.professor.TelaProfessor;
 
-
 public class TelaPrincipal extends JFrame{
 	private JFrame reference;
 	
@@ -37,16 +36,14 @@ public class TelaPrincipal extends JFrame{
 		setTitle("JAVA");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setSize(400, 300);
+		setSize(600, 400);
 		setLocationRelativeTo(null);
 		
 		reference = this;
 		
-		
-		
 		JPanel panel = new JPanel();
 		panel.setLayout(null);
-		panel.setSize(400,300);
+		panel.setSize(600,400);
 		panel.setLocation(0,0);
 		panel.setBackground(Color.red); 
 		
@@ -146,6 +143,27 @@ public class TelaPrincipal extends JFrame{
 			}
 		});
 		
+		JMenuItem mnMostrarCursosProfessores = new JMenuItem("Cursos/Professores");
+		mnMostrarCursosProfessores.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new TelaCursoProfessor(reference);		
+			}
+		});
+		
+		JMenuItem mnMostrarCursosDisciplinas = new JMenuItem("Cursos/Disciplinas");
+		mnMostrarCursosDisciplinas.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new TelaCursoDisciplina(reference);		
+			}
+		});
+		
+		JMenuItem mnMostrarProfessoresDisciplinas = new JMenuItem("Professores/Disciplinas");
+		mnMostrarProfessoresDisciplinas.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new TelaProfessorDisciplina(reference);		
+			}
+		});
+		
 		JMenuItem mnSairItem = new JMenuItem("Sair");
 		mnSairItem.addActionListener(new ActionListener() {
 			
@@ -171,6 +189,9 @@ public class TelaPrincipal extends JFrame{
 		mnMostrar.add(mnMostrarProfessores);
 		mnMostrar.add(mnMostrarDisciplinas);
 		mnMostrar.addSeparator();
+		mnMostrar.add(mnMostrarCursosProfessores);
+		mnMostrar.add(mnMostrarCursosDisciplinas);
+		mnMostrar.add(mnMostrarProfessoresDisciplinas);
 		
 		//Cadastrar
 		JMenu mnManutencao = new JMenu("Manutenção");
@@ -187,7 +208,7 @@ public class TelaPrincipal extends JFrame{
 		mnSair.add(mnSairItem);
 		
 		JMenuBar bar = new JMenuBar();
-		bar.setSize(400, 30);
+		bar.setSize(600, 30);
 		bar.setLocation(0,0);
 		bar.add(mnCadastrar);
 		bar.add(mnMostrar);

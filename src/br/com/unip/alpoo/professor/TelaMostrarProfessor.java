@@ -51,7 +51,7 @@ public class TelaMostrarProfessor extends FrameALPO{
 
 	public TelaMostrarProfessor(Component parent) {
 		setTitle("Mostrar Professor");
-		setSize(800,750);
+		setSize(800,600);
 		setResizable(false);
 		setLocationRelativeTo(parent);
 		setAlwaysOnTop(true);

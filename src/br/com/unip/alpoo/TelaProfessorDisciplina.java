@@ -1,4 +1,4 @@
-package br.com.unip.alpoo.curso;
+package br.com.unip.alpoo;
 
 import java.awt.Component;
 import java.awt.event.MouseAdapter;
@@ -18,7 +18,7 @@ import javax.swing.JTextField;
 import br.com.unip.alpoo.FrameALPO;
 import br.com.unip.alpoo.model.Curso;
 
-public class TelaMostrarCurso extends FrameALPO {
+public class TelaProfessorDisciplina extends FrameALPO {
 	private JTable table;
 	private JLabel lbId;
 	private JLabel lbNome;
@@ -36,8 +36,8 @@ public class TelaMostrarCurso extends FrameALPO {
 	private Curso c;
 	
 	
-	public TelaMostrarCurso(Component parent){
-		setTitle("Mostrar Curso");
+	public TelaProfessorDisciplina(Component parent){
+		setTitle("Mostrar Professor/Disciplina");
 		setSize(400,500);
 		setResizable(false);
 		setLocationRelativeTo(parent);
@@ -48,11 +48,7 @@ public class TelaMostrarCurso extends FrameALPO {
 		panel = new JPanel();
 		panel.setSize(400,300);
 		panel.setLayout(null);
-		
-		
-		
-		//
-		
+
 		//ID	
 		lbId = new JLabel("ID");
 		lbId.setSize(390, 20);
@@ -78,9 +74,7 @@ public class TelaMostrarCurso extends FrameALPO {
 		lista.addElement("Farmacologia");
 		lista.addElement("Rede de Computadores");
 		lista.addElement("Sistema de Informações");
-		
-		
-		
+
 		lbNome = new JLabel("Nome: ");
 		lbNome.setSize(200, 200);
 		panel.add(lbNome);
@@ -123,72 +117,7 @@ public class TelaMostrarCurso extends FrameALPO {
 		txtCarga.setLocation(245, 125);
 		panel.add(txtCarga);
 		//
-		
-		
-		
-		
-		List<Curso> list = Curso.getListCursos();
-		MostrarCursoTableModel dm = new MostrarCursoTableModel(list);
-		table = new JTable();
-		table.setModel(dm);
-		table.addMouseListener(new MouseAdapter() {
-			@Override
-		    public void mouseClicked(java.awt.event.MouseEvent evt) {
-		        int row = table.rowAtPoint(evt.getPoint());
-		        int col = table.columnAtPoint(evt.getPoint());
-		        if (row >= 0 && col >= 0) {
-		        	MostrarCursoTableModel dm = (MostrarCursoTableModel) table.getModel();
-		        	Curso c = dm.getItemAt(row);
-		        	System.out.println(c.getNome());;
-		        	
-		        	txtNome.setText(c.getNome());
-		        	txtNome.setEnabled(false);
-		        	lbId.setText("ID "+ c.getId());
-		        	
-		        	txtCarga.setText(c.getCargaHoraria()+"");
-		        	txtCarga.setEnabled(false);
-		        	
-		        	int size = lista.getSize();
-		        	
-		        	rdBacharel.setSelected(false);
-		        	rdGestao.setSelected(false);
-		        	rdOutros.setSelected(false);
-		        	
-		        	switch(c.getTipo()){
-		        		case "Bacharel" :
-		        			rdBacharel.setSelected(true);
-		        			break;
-		        		case "Gestão" :
-		        			rdGestao.setSelected(true);
-		        			break;
-		        		case "Outros" :
-		        			rdOutros.setSelected(true);
-		        			break;
-		        		
-		        	}
-		        	
-		        	for(int i =0; i < size; i++){
-		        		String nome = lista.get(i).toString();
-		        		if(nome.equals(c.getNome())){
-		        			lbNome.setText("Nome: "+c.getNome());
-		        			
-		        		}
-		        		
-		        	}
-		        	
-		        	
-		        	
-
-		        }
-		    }
-		});
-		JScrollPane jscpane = new JScrollPane(table);
-		jscpane.setSize(390, 250);
-		addBottom(jscpane, lbNome);
-		jscpane.setLocation(jscpane.getLocation().x, jscpane.getLocation().y+10);
-		panel.add(jscpane);
-		
-		
+				
 		add(panel);
 	}
 }

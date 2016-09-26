@@ -39,7 +39,7 @@ public class TelaMostrarDisciplina extends FrameALPO {
 
 	public TelaMostrarDisciplina(Component parent) {
 		setTitle("Mostrar Disciplina");
-		setSize(400,750);
+		setSize(400,500);
 		setResizable(false);
 		setLocationRelativeTo(parent);
 		setAlwaysOnTop(true);
@@ -47,7 +47,7 @@ public class TelaMostrarDisciplina extends FrameALPO {
 		setVisible(true);
 		
 		JPanel panel = new JPanel();
-		panel.setSize(400,750);
+		panel.setSize(400,500);
 		panel.setLayout(null);
 		
 		//
