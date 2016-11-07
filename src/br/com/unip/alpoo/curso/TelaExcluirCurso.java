@@ -12,6 +12,8 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
+import br.com.unip.alpoo.AlertOptionALPOO;
+
 
 public class TelaExcluirCurso extends JFrame{ 
 	public TelaExcluirCurso(Component parent) {
@@ -105,6 +107,7 @@ public class TelaExcluirCurso extends JFrame{
 		Button confirmButton = new Button("Excluir");
 		confirmButton.setSize(100, 30);
 		confirmButton.setLocation(100, 250);
+		confirmButton.addActionListener(new AlertOptionALPOO(AlertOptionALPOO.DELETE,this));
 		panel.add(confirmButton);
 		
 		add(panel);	

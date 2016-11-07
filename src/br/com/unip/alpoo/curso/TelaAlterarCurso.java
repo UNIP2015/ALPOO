@@ -12,6 +12,8 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
+import br.com.unip.alpoo.AlertOptionALPOO;
+
 
 public class TelaAlterarCurso extends JFrame{ 
 	public TelaAlterarCurso(Component parent) {
@@ -105,6 +107,7 @@ public class TelaAlterarCurso extends JFrame{
 		Button confirmButton = new Button("Alterar");
 		confirmButton.setSize(100, 30);
 		confirmButton.setLocation(100, 250);
+		confirmButton.addActionListener(new AlertOptionALPOO(AlertOptionALPOO.EDIT,this));
 		panel.add(confirmButton);
 		
 		add(panel);	

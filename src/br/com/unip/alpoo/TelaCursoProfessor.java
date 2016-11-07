@@ -3,6 +3,7 @@ package br.com.unip.alpoo;
 import java.awt.Component;
 import java.awt.event.MouseAdapter;
 import java.util.List;
+import java.util.Random;
 
 import javax.swing.ButtonGroup;
 import javax.swing.DefaultListModel;
@@ -16,7 +17,9 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 
 import br.com.unip.alpoo.FrameALPO;
+import br.com.unip.alpoo.curso.MostrarCursoTableModel;
 import br.com.unip.alpoo.model.Curso;
+import br.com.unip.alpoo.model.Professor;
 
 public class TelaCursoProfessor extends FrameALPO {
 	private JTable table;
@@ -34,6 +37,9 @@ public class TelaCursoProfessor extends FrameALPO {
 	private DefaultListModel lista;
 	private JPanel panel;
 	private Curso c;
+	private JLabel lbNomeProf;
+	private JLabel lbEspecilidade;
+	private JLabel lbTitulo;
 	
 	
 	public TelaCursoProfessor(Component parent){
@@ -117,7 +123,99 @@ public class TelaCursoProfessor extends FrameALPO {
 		txtCarga.setLocation(245, 125);
 		panel.add(txtCarga);
 		//
-				
+		
+		lbNomeProf = new JLabel("Nome do Professor");
+		lbNomeProf.setSize(400,20);
+		lbNomeProf.setLocation(5, 150);
+		panel.add(lbNomeProf);
+		
+		lbEspecilidade = new JLabel("Especialidade");
+		lbEspecilidade.setSize(200,20);
+		addBottom(lbEspecilidade, lbNomeProf);
+		panel.add(lbEspecilidade);
+		
+		lbTitulo = new JLabel("Titulo");
+		lbTitulo.setSize(400, 20);
+		addBottom(lbTitulo, lbEspecilidade);
+		panel.add(lbTitulo);
+			
+		
+		//
+		
+		List<Curso> list = Curso.getListCursos();
+		MostrarCursoTableModel dm = new MostrarCursoTableModel(list);
+		table = new JTable();
+		table.setModel(dm);
+		
+		table.addMouseListener(new MouseAdapter() {
+			@Override
+		    public void mouseClicked(java.awt.event.MouseEvent evt) {
+		        int row = table.rowAtPoint(evt.getPoint());
+		        int col = table.columnAtPoint(evt.getPoint());
+		        if (row >= 0 && col >= 0) {
+		        	MostrarCursoTableModel dm = (MostrarCursoTableModel) table.getModel();
+		        	Curso c = dm.getItemAt(row);
+		        	System.out.println(c.getNome());;
+		        	
+		        	txtNome.setText(c.getNome());
+		        	txtNome.setEnabled(false);
+		        	lbId.setText("ID "+ c.getId());
+		        	
+		        	txtCarga.setText(c.getCargaHoraria()+"");
+		        	txtCarga.setEnabled(false);
+		        	
+		        	int size = lista.getSize();
+		        	
+		        	rdBacharel.setSelected(false);
+		        	rdGestao.setSelected(false);
+		        	rdOutros.setSelected(false);
+		        	
+		        	switch(c.getTipo()){
+		        		case "Bacharel" :
+		        			rdBacharel.setSelected(true);
+		        			break;
+		        		case "Gestão" :
+		        			rdGestao.setSelected(true);
+		        			break;
+		        		case "Outros" :
+		        			rdOutros.setSelected(true);
+		        			break;
+		        		
+		        	}
+		        	
+		        	for(int i =0; i < size; i++){
+		        		String nome = lista.get(i).toString();
+		        		if(nome.equals(c.getNome())){
+		        			lbNome.setText("Nome: "+c.getNome());
+		        			
+		        		}
+		        		
+		        	}
+		        	
+		        	Random r = new Random();
+		        	List<Professor> l = Professor.list();
+		        	Professor p = l.get(r.nextInt(l.size()));
+		        	lbNomeProf.setText("Nome do Professor: "+p.getNome());
+		        	lbEspecilidade.setText("Especialidade: "+p.getEspecialidades());
+		        	lbTitulo.setText("Titulo: "+p.getTitulo());
+		        	
+		        	
+		        	
+		        	
+
+		        }
+		    }
+		});
+		
+		JScrollPane jscpane = new JScrollPane(table);
+		jscpane.setSize(390, 250);
+		addBottom(jscpane, lbTitulo);
+		jscpane.setLocation(jscpane.getLocation().x, jscpane.getLocation().y+10);
+		panel.add(jscpane);
+		
+		//
+		
+		
 		add(panel);
 	}
 }

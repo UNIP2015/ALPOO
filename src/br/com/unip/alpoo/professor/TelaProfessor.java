@@ -11,6 +11,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.text.MaskFormatter;
 
+import br.com.unip.alpoo.AlertOptionALPOO;
+
 
 
 public class TelaProfessor extends JFrame{
@@ -181,12 +183,13 @@ public class TelaProfessor extends JFrame{
 		Button confirmButton = new Button("Cadastrar");
 		confirmButton.setSize(100, 30);
 		confirmButton.setLocation(100, 270);
+		confirmButton.addActionListener(new AlertOptionALPOO(AlertOptionALPOO.SAVE,this));
 		panel.add(confirmButton);
 		
 		Button clearButton = new Button("Limpar");
 		clearButton.setSize(100, 30);
 		clearButton.setLocation(200, 270);
-		panel.add(clearButton);
+//		panel.add(clearButton);
 		
 		add(panel);
 	}
