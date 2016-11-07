@@ -16,6 +16,7 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 
 import br.com.unip.alpoo.FrameALPO;
+import br.com.unip.alpoo.dao.DAOCurso;
 import br.com.unip.alpoo.model.Curso;
 
 public class TelaMostrarCurso extends FrameALPO {
@@ -127,7 +128,9 @@ public class TelaMostrarCurso extends FrameALPO {
 		
 		
 		
-		List<Curso> list = Curso.getListCursos();
+		DAOCurso dao = new DAOCurso();
+//		List<Curso> list = Curso.getListCursos();
+		List<Curso> list = dao.all();
 		MostrarCursoTableModel dm = new MostrarCursoTableModel(list);
 		table = new JTable();
 		table.setModel(dm);

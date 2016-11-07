@@ -45,7 +45,7 @@ public class TelaPrincipal extends JFrame{
 		panel.setLayout(null);
 		panel.setSize(600,400);
 		panel.setLocation(0,0);
-		panel.setBackground(Color.red); 
+		panel.setBackground(Color.gray); 
 		
 		JMenuItem m1 = new JMenuItem("Curso");
 		m1.addActionListener(new ActionListener() {

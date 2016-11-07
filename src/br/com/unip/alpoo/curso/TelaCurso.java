@@ -1,19 +1,35 @@
 package br.com.unip.alpoo.curso;
 import java.awt.Button;
 import java.awt.Component;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.AbstractButton;
 import javax.swing.ButtonGroup;
 import javax.swing.DefaultListModel;
+import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
+import br.com.unip.alpoo.dao.DAOCurso;
+import br.com.unip.alpoo.model.Curso;
 
-public class TelaCurso extends JFrame{ 
+
+public class TelaCurso extends JFrame implements ActionListener{ 
+	private JTextField txtNome;
+	private JTextField txtCarga;
+	private JRadioButton rdBacharel;
+	private JRadioButton rdGestao;
+	private JRadioButton rdOutros;
+	private ButtonGroup groupRadio;
+	private JList cbNome;
+
 	public TelaCurso(Component parent) {
 		setTitle("Cadastrar Curso");
 		setSize(400,320);
@@ -39,7 +55,7 @@ public class TelaCurso extends JFrame{
 		lbNome.setLocation(5,25);
 		panel.add(lbNome);
 	
-		JTextField txtNome = new JTextField();
+		txtNome = new JTextField();
 		txtNome.setSize(390,20);
 		txtNome.setLocation(5, 45);
 		
@@ -58,7 +74,7 @@ public class TelaCurso extends JFrame{
 		lista.addElement("Rede de Computadores");
 		lista.addElement("Sistema de Informações");
 		
-		JList cbNome = new JList(lista);
+		cbNome = new JList(lista);
 		cbNome.setSize(200, 200);
 		cbNome.setLocation(5, 45);
 		
@@ -70,22 +86,22 @@ public class TelaCurso extends JFrame{
 		lbTipoCurso.setLocation(245, 25);
 		panel.add(lbTipoCurso);
 		
-		JRadioButton rdBacharel = new JRadioButton("Bacharel");
+		rdBacharel = new JRadioButton("Bacharel");
 		rdBacharel.setSize(200, 20);
 		rdBacharel.setLocation(245, 45);
 		panel.add(rdBacharel);
 		
-		JRadioButton rdGestao = new JRadioButton("Gestão");
+		rdGestao = new JRadioButton("Gestão");
 		rdGestao.setSize(200, 20);
 		rdGestao.setLocation(245, 65);
 		panel.add(rdGestao);
 		
-		JRadioButton rdOutros = new JRadioButton("Outros");
+		rdOutros = new JRadioButton("Outros");
 		rdOutros.setSize(200, 20);
 		rdOutros.setLocation(245, 85);
 		panel.add(rdOutros);
 		
-		ButtonGroup groupRadio = new ButtonGroup();
+		groupRadio = new ButtonGroup();
 		groupRadio.add(rdBacharel);
 		groupRadio.add(rdGestao);
 		groupRadio.add(rdOutros);
@@ -97,15 +113,18 @@ public class TelaCurso extends JFrame{
 		lbCarga.setLocation(245, 105);
 		panel.add(lbCarga);
 		
-		JTextField txtCarga = new JTextField();
+		txtCarga = new JTextField();
 		txtCarga.setSize(115,20);
 		txtCarga.setLocation(245, 125);
 		panel.add(txtCarga);
 		
-		Button confirmButton = new Button("Cadastrar");
+		JButton confirmButton = new JButton("Cadastrar");
 		confirmButton.setSize(100, 30);
 		confirmButton.setLocation(100, 250);
 		panel.add(confirmButton);
+		
+		DAOCurso dao = new DAOCurso();
+		confirmButton.addActionListener(this);
 		
 		Button clearButton = new Button("Limpar");
 		clearButton.setSize(100, 30);
@@ -115,6 +134,33 @@ public class TelaCurso extends JFrame{
 		//CODIGO INSTITUTO
 		
 		add(panel);	
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		Curso c = new Curso();
+		c.setCargaHoraria(txtCarga.getText());
+		c.setCodInstitulo(1);
+		
+		
+		String value = (String) cbNome.getSelectedValue();
+		c.setNome(value);
+	
+		
+		if(rdOutros.isSelected()){
+			c.setTipo(rdOutros.getText());
+		}else if(rdGestao.isSelected()){
+			c.setTipo(rdGestao.getText());
+		}else if(rdBacharel.isSelected()){
+			c.setTipo(rdBacharel.getText());
+		}else {
+			c.setTipo("Nenhum");
+		}
+		
+		
+		DAOCurso dao = new DAOCurso();
+		dao.save(c);
+		
 	}
 
 	

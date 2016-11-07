@@ -1,10 +1,13 @@
 package br.com.unip.alpoo.model;
 
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Curso {
+public class Curso extends Entity{
+	
 	private int id;
 	private String nome;
 	private String tipo;
@@ -34,6 +37,14 @@ public class Curso {
 	}
 	public void setCargaHoraria(int cargaHoraria) {
 		this.cargaHoraria = cargaHoraria;
+	}
+	public void setCargaHoraria(String cargaHoraria) {
+		if(cargaHoraria.isEmpty()){
+			this.cargaHoraria = 0;
+		}else {
+			this.cargaHoraria = Integer.parseInt(cargaHoraria);
+		}
+		
 	}
 	public int getCodInstitulo() {
 		return codInstitulo;
@@ -69,6 +80,15 @@ public class Curso {
 		
 		return list;
 	}
+
+	
+	public void setPreparement(PreparedStatement prep) throws SQLException {
+		
+		
+	}
+	
+	
+	
 	
 	
 }
