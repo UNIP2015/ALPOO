@@ -9,6 +9,8 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
+import br.com.unip.alpoo.AlertOptionALPOO;
+
 
 public class TelaAlterarDisciplina extends JFrame{
 	public TelaAlterarDisciplina(Component parent) {
@@ -115,6 +117,7 @@ public class TelaAlterarDisciplina extends JFrame{
 		
 		Button confirmButton = new Button("Alterar");
 		confirmButton.setSize(100, 30);
+		confirmButton.addActionListener(new AlertOptionALPOO(AlertOptionALPOO.EDIT,this));
 		confirmButton.setLocation(100, 200);
 		panel.add(confirmButton);	
 		

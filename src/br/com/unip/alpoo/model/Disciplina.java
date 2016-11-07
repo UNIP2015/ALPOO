@@ -32,6 +32,9 @@ public class Disciplina {
 	public String getCodCurso() {
 		return codCurso;
 	}
+	public int getCodCursoNumber(){
+		return Integer.parseInt(codCurso);
+	}
 	public void setCodCurso(String codCurso) {
 		this.codCurso = codCurso;
 	}
@@ -44,10 +47,14 @@ public class Disciplina {
 	
 	public static List<Disciplina> list(){
 		List<Disciplina> l = new ArrayList<>();
+		List<Curso> lsCurso = Curso.getListCursos();
+		Random r = new Random();
 		for(int i = 0; i < 10; i++){
-			Random r = new Random();
+			
 			Disciplina d = new Disciplina();
-			d.setCodCurso("1");
+			Curso c = lsCurso.get(r.nextInt(lsCurso.size()));
+			
+			d.setCodCurso(c.getId()+"");
 			d.setId((i+1));
 			d.setAulasPorSemana((r.nextInt(6)+1)+"");
 			d.setNome("Disciplina " +(i+1));

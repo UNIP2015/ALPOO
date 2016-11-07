@@ -16,6 +16,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
+import br.com.unip.alpoo.AlertOptionALPOO;
+
 
 import br.com.unip.alpoo.dao.DAOCurso;
 import br.com.unip.alpoo.model.Curso;
@@ -118,7 +120,7 @@ public class TelaCurso extends JFrame implements ActionListener{
 		txtCarga.setLocation(245, 125);
 		panel.add(txtCarga);
 		
-		JButton confirmButton = new JButton("Cadastrar");
+		Button confirmButton = new Button("Cadastrar");
 		confirmButton.setSize(100, 30);
 		confirmButton.setLocation(100, 250);
 		panel.add(confirmButton);
@@ -129,7 +131,7 @@ public class TelaCurso extends JFrame implements ActionListener{
 		Button clearButton = new Button("Limpar");
 		clearButton.setSize(100, 30);
 		clearButton.setLocation(200, 250);
-		panel.add(clearButton);
+//		panel.add(clearButton);
 		
 		//CODIGO INSTITUTO
 		

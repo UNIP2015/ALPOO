@@ -122,6 +122,52 @@ public class DAOCurso extends DAOConnect {
 		return ls;
 	}
 
+	@Override
+	public boolean delete(Entity obj) {
+		Curso c = (Curso) obj;
+		String sql = "DELETE FROM "+ this.table + " WHERE id = " + c.getId();
+		try{
+			Connection conn = this.getConnection();
+			PreparedStatement p = conn.prepareStatement(sql);
+			boolean success = p.execute();
+			conn.close();
+			return success;
+		}catch(SQLException e){
+			//handle exception
+		}
+		return false;
+	}
+
+	@Override
+	public boolean update(Entity obj) {
+		Curso c = (Curso) obj;
+		String sql = "UPDATE " + this.table;
+		try{
+			
+			sql += " SET NOME = \'"+c.getNome()+"\',";
+			sql += " TIPO = \'"+c.getTipo()+"\',";
+			sql += " CARGA = \'"+c.getCargaHoraria()+"\',";
+			sql += " COD_INSTITUTO = \'"+c.getCodInstitulo()+"\'";
+			sql += " WHERE ID = " + c.getId(); 
+			
+			System.out.println(sql);
+			
+			Connection conn = this.getConnection();
+			PreparedStatement p = conn.prepareStatement(sql);
+			boolean success = p.execute();
+			conn.close();
+			return success;
+			
+		}catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		
+		
+		
+		return false;
+	}
+
 	
 	
 	

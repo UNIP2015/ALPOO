@@ -23,31 +23,32 @@ import br.com.unip.alpoo.model.Disciplina;
 import br.com.unip.alpoo.model.Professor;
 
 public class TelaMostrarProfessor extends FrameALPO{
-	private JTable table;
-	private JLabel lbID;
-	private JLabel lbNome;
-	private JTextField txtNome;
-	private JLabel lbEndereco;
-	private JTextField txtEndereco;
-	private JLabel lbNumero;
-	private JTextField txtNumero;
-	private JLabel lbBairro;
-	private JTextField txtBairro;
-	private JLabel lbCidade;
-	private JTextField txtCidade;
-	private JLabel lbEstado;
-	private JComboBox cbEstado;
-	private JLabel lbTelefone;
-	private MaskFormatter formater;
-	private JLabel lbDataNasc;
-	private JFormattedTextField txtDateNasc;
-	private JLabel lbEspecialidade;
-	private JComboBox cbEspecialidades;
-	private JLabel lbTitulo;
-	private JComboBox cbTitulo;
-	private String[] ufs;
-	private String[] titulos;
-	private String[] especialidades;
+	protected JTable table;
+	protected JLabel lbID;
+	protected JLabel lbNome;
+	protected JTextField txtNome;
+	protected JLabel lbEndereco;
+	protected JTextField txtEndereco;
+	protected JLabel lbNumero;
+	protected JTextField txtNumero;
+	protected JLabel lbBairro;
+	protected JTextField txtBairro;
+	protected JLabel lbCidade;
+	protected JTextField txtCidade;
+	protected JLabel lbEstado;
+	protected JComboBox cbEstado;
+	protected JLabel lbTelefone;
+	protected MaskFormatter formater;
+	protected JLabel lbDataNasc;
+	protected JFormattedTextField txtDateNasc;
+	protected JLabel lbEspecialidade;
+	protected JComboBox cbEspecialidades;
+	protected JLabel lbTitulo;
+	protected JComboBox cbTitulo;
+	protected String[] ufs;
+	protected String[] titulos;
+	protected String[] especialidades;
+	protected JPanel panel;
 
 	public TelaMostrarProfessor(Component parent) {
 		setTitle("Mostrar Professor");
@@ -58,7 +59,7 @@ public class TelaMostrarProfessor extends FrameALPO{
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setVisible(true);
 		
-		JPanel panel = new JPanel();
+		panel = new JPanel();
 		panel.setSize(400,300);
 		panel.setLayout(null);
 		

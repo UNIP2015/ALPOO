@@ -11,6 +11,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.text.MaskFormatter;
 
+import br.com.unip.alpoo.AlertOptionALPOO;
+
 
 
 public class TelaAlterarProfessor extends JFrame{
@@ -181,6 +183,7 @@ public class TelaAlterarProfessor extends JFrame{
 		Button confirmButton = new Button("Alterar");
 		confirmButton.setSize(100, 30);
 		confirmButton.setLocation(100, 270);
+		confirmButton.addActionListener(new AlertOptionALPOO(AlertOptionALPOO.EDIT,this));
 		panel.add(confirmButton);
 		
 		add(panel);

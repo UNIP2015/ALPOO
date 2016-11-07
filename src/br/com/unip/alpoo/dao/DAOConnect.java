@@ -93,6 +93,8 @@ public abstract class DAOConnect {
 	}
 	
 	abstract public boolean save(Entity obj);
+	abstract public boolean delete(Entity obj);
+	abstract public boolean update(Entity obj);
 	
 	protected String getFields(){
 		

@@ -42,7 +42,11 @@ public class Curso extends Entity{
 		if(cargaHoraria.isEmpty()){
 			this.cargaHoraria = 0;
 		}else {
-			this.cargaHoraria = Integer.parseInt(cargaHoraria);
+			try{ 
+				this.cargaHoraria = Integer.parseInt(cargaHoraria);
+			}catch (Exception e) {
+				this.cargaHoraria = 0;
+			}
 		}
 		
 	}
